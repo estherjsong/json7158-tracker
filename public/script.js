@@ -2,6 +2,8 @@
 const form = document.getElementById("taskform");
 const tasklist = document.getElementById("tasklist");
 
+form.elements.taskName.value = "taskTest";
+
 var taskList = [];
 
 function addTask(name, type, rate, time, client) {
@@ -33,9 +35,7 @@ function displayTask(task) {
     let item = document.createElement("li");
     item.setAttribute("data-id", task.id);
     item.innerHTML =
-        `<p><strong>${task.name}</strong><br>${task.type}</p>
-     <span><em>${task.time} hours</em><br>$${task.rate}/hr</span>
-    `;
+        `<p><strong>${task.name}</strong><br>${task.type}</p><span><em>${task.time} hours</em><br>${task.rate}/hr</span>`;
 
     tasklist.appendChild(item);
 
